@@ -1,6 +1,35 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0a0a0a;
+  --color-foreground: #f5f5f5;
+  --color-brand-500: #f97316;
+  --color-brand-800: #9a3412;
+
+  --font-sans: "Poppins", sans-serif;
+
+  --animate-fade-in-up: fade-in-up 0.6s ease-out both;
+
+  @keyframes fade-in-up {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@utility bg-gradient-brand {
+  background-image: linear-gradient(to right, var(--color-brand-500), var(--color-brand-800));
+}
+
+@utility text-gradient-brand {
+  @apply bg-gradient-brand bg-clip-text text-transparent;
+}
 
 @layer base {
   html {
@@ -12,6 +41,12 @@
     @apply bg-background font-sans text-foreground antialiased;
   }
 
+  /* Tailwind 4 resets buttons to the default cursor; restore the pointer. */
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
   /* Keep anchored sections clear of the sticky header. */
   section[id] {
     scroll-margin-top: 5rem;
@@ -21,15 +56,5 @@
     html {
       scroll-behavior: auto;
     }
-  }
-}
-
-@layer utilities {
-  .bg-gradient-brand {
-    background-image: linear-gradient(to right, theme("colors.brand.500"), theme("colors.brand.800"));
-  }
-
-  .text-gradient-brand {
-    @apply bg-gradient-brand bg-clip-text text-transparent;
   }
 }

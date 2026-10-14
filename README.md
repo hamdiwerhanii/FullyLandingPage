@@ -4,9 +4,9 @@ A modern, dark-themed, fully responsive marketing landing page for **VirtualR**,
 
 ![React](https://img.shields.io/badge/React-18.3-61DAFB?logo=react&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.6-3178C6?logo=typescript&logoColor=white)
-![Vite](https://img.shields.io/badge/Vite-5.4-646CFF?logo=vite&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-06B6D4?logo=tailwindcss&logoColor=white)
-![Vitest](https://img.shields.io/badge/Vitest-3-6E9F18?logo=vitest&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-8-646CFF?logo=vite&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?logo=tailwindcss&logoColor=white)
+![Vitest](https://img.shields.io/badge/Vitest-4-6E9F18?logo=vitest&logoColor=white)
 ![ESLint](https://img.shields.io/badge/ESLint-9-4B32C3?logo=eslint&logoColor=white)
 
 ---
@@ -80,8 +80,8 @@ There is no backend or API; all content is static and rendered on the client.
 | -------------- | ----------------------------------------------------------------------------------- |
 | UI library     | [React 18](https://react.dev/)                                                      |
 | Language       | [TypeScript 5](https://www.typescriptlang.org/) (strict)                            |
-| Build tool     | [Vite 5](https://vitejs.dev/) with `@vitejs/plugin-react`                           |
-| Styling        | [Tailwind CSS 3](https://tailwindcss.com/), PostCSS, Autoprefixer                   |
+| Build tool     | [Vite 8](https://vite.dev/) with `@vitejs/plugin-react`                             |
+| Styling        | [Tailwind CSS 4](https://tailwindcss.com/) via `@tailwindcss/vite` (CSS-first config) |
 | UI utilities   | `class-variance-authority`, `clsx`, `tailwind-merge`, `@radix-ui/react-slot`        |
 | Icons          | [Lucide React](https://lucide.dev/)                                                 |
 | Testing        | [Vitest](https://vitest.dev/), Testing Library, jsdom                               |
@@ -101,7 +101,7 @@ FullyLandingPage/
 │   ├── app/
 │   │   ├── App.tsx                   # Composes the page sections
 │   │   ├── Layout.tsx                # Skip link + Header + <main> + Footer
-│   │   └── globals.css               # Tailwind layers, brand utilities, animations
+│   │   └── globals.css               # Tailwind import + @theme (colors, font, animation), brand utilities
 │   ├── modules/
 │   │   ├── Home/
 │   │   │   ├── Hero/                 # components/ constants/ types/
@@ -122,9 +122,8 @@ FullyLandingPage/
 │   └── main.tsx                      # React entry point
 ├── index.html                        # HTML shell, meta tags, font loading
 ├── eslint.config.js
-├── tailwind.config.js                # Brand colors + font
 ├── tsconfig.json                     # Strict TS, `@/` path alias
-├── vite.config.ts                    # React plugin + `@/` alias
+├── vite.config.ts                    # React + Tailwind plugins, `@/` alias
 ├── vitest.unit.config.ts
 └── vitest.setup.ts
 ```
@@ -140,7 +139,7 @@ FullyLandingPage/
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) 18 or later (20 LTS recommended)
+- [Node.js](https://nodejs.org/) 20.19+ or 22.12+ (required by Vite 8)
 - npm (a `package-lock.json` is included)
 
 ### Installation
@@ -183,7 +182,7 @@ The page is composed in `src/app/App.tsx` in this order:
 
 - **Content:** edit the `constants/*.data.ts` file of the relevant module (for example `src/modules/Home/Pricing/constants/pricing.data.ts`). TypeScript will flag any missing field.
 - **Navigation:** menu items and CTA targets live in `src/shared/constants/nav.ts`; the active-section highlight picks up new items automatically as long as a `<section>` with the matching `id` exists.
-- **Brand colors:** change `brand.500` / `brand.800` in `tailwind.config.js`; every gradient, button and accent updates.
+- **Brand colors:** change `--color-brand-500` / `--color-brand-800` in the `@theme` block of `src/app/globals.css`; every gradient, button and accent updates.
 - **Buttons and badges:** add or tweak variants in `src/shared/components/Button.tsx` / `Badge.tsx`.
 - **Media:** replace files in `public/images` and `public/videos` and update the paths in the module's data file.
 
