@@ -44,7 +44,8 @@ export const useActiveSection = () => {
       });
     };
 
-    resolveActiveHref();
+    // Resolve the initial section on the next frame (e.g. when the page loads with a #hash).
+    schedule();
     window.addEventListener("scroll", schedule, { passive: true });
     window.addEventListener("resize", schedule);
 
