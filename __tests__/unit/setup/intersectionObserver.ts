@@ -1,6 +1,5 @@
 import { vi } from "vitest";
 
-/** jsdom has no IntersectionObserver; report every element as visible. */
 export function mockIntersectionObserver() {
   class MockIntersectionObserver {
     constructor(private callback: IntersectionObserverCallback) {}

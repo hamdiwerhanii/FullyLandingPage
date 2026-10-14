@@ -4,10 +4,9 @@ import { SITE } from "@/shared/constants/site";
 import { FOOTER_NAV_COLUMNS, FOOTER_TAGLINE } from "../constants/footer.data";
 
 const EXTERNAL_LINK_PROPS = { target: "_blank", rel: "noopener noreferrer" } as const;
+const CURRENT_YEAR = new Date().getFullYear();
 
 export default function Footer() {
-  const year = new Date().getFullYear();
-
   return (
     <footer className="mt-20 border-t border-neutral-700">
       <Container className="grid gap-10 py-12 md:grid-cols-[1.5fr_repeat(3,1fr)]">
@@ -41,7 +40,7 @@ export default function Footer() {
       <div className="border-t border-neutral-800">
         <Container className="flex flex-col items-center justify-between gap-2 py-6 text-sm text-neutral-500 sm:flex-row">
           <p>
-            © {year} {SITE.name}. All rights reserved.
+            © {CURRENT_YEAR} {SITE.name}. All rights reserved.
           </p>
           <p>
             Built by{" "}

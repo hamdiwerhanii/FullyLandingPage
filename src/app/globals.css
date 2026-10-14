@@ -41,13 +41,11 @@
     @apply bg-background font-sans text-foreground antialiased;
   }
 
-  /* Tailwind 4 resets buttons to the default cursor; restore the pointer. */
   button:not(:disabled),
   [role="button"]:not(:disabled) {
     cursor: pointer;
   }
 
-  /* Keep anchored sections clear of the sticky header. */
   section[id] {
     scroll-margin-top: 5rem;
   }

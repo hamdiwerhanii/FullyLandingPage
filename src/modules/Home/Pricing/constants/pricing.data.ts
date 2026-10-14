@@ -1,6 +1,5 @@
 import type { BillingCycle, PricingPlan } from "../types/pricing.types";
 
-/** Discount applied to every plan when billed yearly. */
 export const YEARLY_DISCOUNT = 0.2;
 
 export const BILLING_CYCLES: { id: BillingCycle; label: string }[] = [

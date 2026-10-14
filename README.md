@@ -7,7 +7,7 @@ A modern, dark-themed, fully responsive marketing landing page for **VirtualR**,
 ![Vite](https://img.shields.io/badge/Vite-8-646CFF?logo=vite&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?logo=tailwindcss&logoColor=white)
 ![Vitest](https://img.shields.io/badge/Vitest-4-6E9F18?logo=vitest&logoColor=white)
-![ESLint](https://img.shields.io/badge/ESLint-9-4B32C3?logo=eslint&logoColor=white)
+![ESLint](https://img.shields.io/badge/ESLint-10-4B32C3?logo=eslint&logoColor=white)
 
 ---
 
@@ -85,7 +85,7 @@ There is no backend or API; all content is static and rendered on the client.
 | UI utilities   | `class-variance-authority`, `clsx`, `tailwind-merge`, `@radix-ui/react-slot`        |
 | Icons          | [Lucide React](https://lucide.dev/)                                                 |
 | Testing        | [Vitest](https://vitest.dev/), Testing Library, jsdom                               |
-| Linting        | ESLint 9 (flat config) with `typescript-eslint`, `react`, `react-hooks`, `react-refresh` |
+| Linting        | ESLint 10 (flat config) with `typescript-eslint`, `@eslint-react`, `react-hooks`, `react-refresh` |
 | CI             | GitHub Actions                                                                      |
 
 ## Project Structure
@@ -139,7 +139,7 @@ FullyLandingPage/
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) 20.19+ or 22.12+ (required by Vite 8)
+- [Node.js](https://nodejs.org/) 24 LTS recommended (minimum 20.19+ or 22.13+, required by Vite 8 and ESLint 10)
 - npm (a `package-lock.json` is included)
 
 ### Installation
