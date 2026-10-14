@@ -23,7 +23,6 @@ export default function HeaderMobileMenu({
       className={cn(
         "absolute inset-x-0 top-full h-[calc(100svh-100%)] bg-neutral-950 lg:hidden",
         "transition-[opacity,transform,visibility] duration-300 ease-out motion-reduce:transition-none",
-        // `invisible` also removes the links from the tab order while closed.
         isOpen
           ? "visible translate-y-0 opacity-100"
           : "invisible -translate-y-3 opacity-0",

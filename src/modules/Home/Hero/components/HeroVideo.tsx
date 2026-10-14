@@ -4,10 +4,6 @@ type HeroVideoProps = {
   src: string;
 };
 
-/**
- * Decorative looping clip. Autoplay is muted + inline so it works on iOS,
- * and playback stops for users who ask the OS to reduce motion.
- */
 export default function HeroVideo({ src }: HeroVideoProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
 

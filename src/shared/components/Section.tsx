@@ -4,7 +4,6 @@ import { sectionTitleId } from "@/shared/utils/sectionTitleId";
 import { cn } from "@/shared/utils/cn";
 
 type SectionProps = {
-  /** Anchor id used by the navigation; the section's heading must use `sectionTitleId(id)`. */
   id: string;
   className?: string;
   containerClassName?: string;

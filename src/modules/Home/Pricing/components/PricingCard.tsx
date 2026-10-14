@@ -35,7 +35,6 @@ export default function PricingCard({ plan, cycle }: PricingCardProps) {
         <span className="mr-2 text-5xl">{formatPrice(price)}</span>
         <span className="tracking-tight text-neutral-400">/month</span>
       </p>
-      {/* Reserves a line on every card so prices stay aligned when the toggle changes. */}
       <p className="mb-8 min-h-5 text-sm text-neutral-500">
         {showYearlyTotal && `Billed ${formatPrice(price * 12)} yearly`}
       </p>

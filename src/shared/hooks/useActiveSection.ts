@@ -5,10 +5,6 @@ type SectionRef = { href: NavHref; element: HTMLElement };
 
 const PROBE_OFFSET_PX = 16;
 
-/**
- * Returns the href of the nav section currently under the sticky header,
- * or an empty string when the user is above the first section (the hero).
- */
 export const useActiveSection = () => {
   const [activeHref, setActiveHref] = useState<NavHref | "">("");
 
@@ -44,7 +40,6 @@ export const useActiveSection = () => {
       });
     };
 
-    // Resolve the initial section on the next frame (e.g. when the page loads with a #hash).
     schedule();
     window.addEventListener("scroll", schedule, { passive: true });
     window.addEventListener("resize", schedule);

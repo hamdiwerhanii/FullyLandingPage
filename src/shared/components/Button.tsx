@@ -29,7 +29,6 @@ const buttonVariants = cva(
 
 type ButtonProps = React.ComponentPropsWithoutRef<"button"> &
   VariantProps<typeof buttonVariants> & {
-    /** Render the child element (e.g. an `<a>`) with button styles instead of a `<button>`. */
     asChild?: boolean;
   };
 
