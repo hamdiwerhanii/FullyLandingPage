@@ -9,7 +9,7 @@ const SECTION_ID = "get-started";
 export default function GetStartedBanner() {
   return (
     <Section id={SECTION_ID}>
-      <Reveal className="rounded-2xl border border-brand-800 bg-gradient-to-br from-brand-500/15 to-transparent px-6 py-14 text-center sm:px-12">
+      <Reveal className="rounded-2xl border border-brand-800 bg-linear-to-br from-brand-500/15 to-transparent px-6 py-14 text-center sm:px-12">
         <h2 id={sectionTitleId(SECTION_ID)} className="text-3xl tracking-wide sm:text-5xl">
           Ready to build your first <span className="text-gradient-brand">VR world</span>?
         </h2>
